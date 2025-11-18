@@ -11,6 +11,18 @@ const response = {
 
     UPLOAD_SUCCESS:"upload success",
     UPLOAD_FAILED:"upload failed",
+
+    USER_EXIST:"user already have an account",
+    USER_REGISTERED:"user registered",
+    USER_LOGIN:"user logined successfully",
+    ACCOUNT_NOT_EXIST:"you haven't account please register",
+    INVALID_LOGIN:"invalid email or password",
+
+    PROFILE_GET:"profile get successfully",
+    PROFILE_FAIL:"profile get failed",
+
+    UNAUTHORIZED:"unauthorized token",
+    ACCESS_DENIED:"access denied",
 }
 
 module.exports = {response,successResponse,errorResponse}

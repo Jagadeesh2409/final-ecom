@@ -6,6 +6,7 @@ const socket = require('socket.io')
 require('dotenv').config()
 
 const uploadRoute = require('./routes/uploadRoute')
+const authRoute = require('./routes/authRoute')
 
 
 app.use(express.json())
@@ -20,6 +21,8 @@ require('./socket/index')(io)
 
 
 app.use('/uploads',uploadRoute)
+app.use('/auth',authRoute)
+
 app.get('/',(req,res)=>{
     res.send('<h1>Server is Running</h1>')
 })
