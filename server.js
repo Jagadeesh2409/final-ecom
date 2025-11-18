@@ -12,6 +12,7 @@ const io = new socket.Server(server,{
 
 app.io = io
 
+
 require('./socket/index')(io)
 
 app.get('/',(req,res)=>{
