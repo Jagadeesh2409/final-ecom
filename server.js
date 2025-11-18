@@ -4,6 +4,11 @@ const http = require('http')
 const server = http.createServer(app)
 const socket = require('socket.io')
 require('dotenv').config()
+
+const uploadRoute = require('./routes/uploadRoute')
+
+
+app.use(express.json())
 const io = new socket.Server(server,{
     cors:{
         origin:"*"
@@ -11,10 +16,10 @@ const io = new socket.Server(server,{
 })
 
 app.io = io
-
-
 require('./socket/index')(io)
 
+
+app.use('/uploads',uploadRoute)
 app.get('/',(req,res)=>{
     res.send('<h1>Server is Running</h1>')
 })
